@@ -1,0 +1,42 @@
+### Virtual Tourist ###
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
+The functionalitites are implemented as below:
+
+1.
+
+App contains a map view that allows user to drop a pin on touch and hold gesture.
+   As soon as pin is dropped, the location is saved in "Location" core data entity. Only photos (not its underlying images) associated with this location are pre-fetched and saved in "Photo" core data entity.
+
+User can also drag the pin until user finds the location of their choice. As soon as pin is dragged to its final location, location and associted photos are stored in Core Data.
+
+User can delete the pin by clicking on its left call out view. This will delete location, photos and images from core data and documents directory.
+
+User can see the Flickr images by clicking on its right call out view.
+
+Each location may contain many photos.
+Each photo is associated with its (only one) related location.
+
+2.
+
+When user clicks on right call out of pin, photo album view will be opened which displayes the Flickr Images for that location.
+The images will be shown as soon as they are being downloaded. (20 images are shown per page).
+The "New Collection" button will get enabled only when all the images are being downloaded. On clicking of this button, user can download another set of images, if exist.
+
+To delete the image/ images , user will select the collection view cell. This will show "Save collection" button. On click of this, phots entities will be deleted from Core Data. And its underlying files are automatically deleted from Photo Managed object (using prepareForDeletion method).
+
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
+Reference for core data related implementation:
+1. Life Saver :) - http://discussions.udacity.com/t/core-data-thread-safety/15175
+2. http://www.raywenderlich.com/999/core-data-tutorial-for-ios-how-to-use-nsfetchedresultscontroller
+
+
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+Icons courtesy:
+http://www.clker.com/disclaimer.html
